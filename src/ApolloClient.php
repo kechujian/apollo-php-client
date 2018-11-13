@@ -134,9 +134,17 @@ class ApolloClient
         } while ($mrc == CURLM_CALL_MULTI_PERFORM);
 
         while ($active && $mrc == CURLM_OK) {
+            while (curl_multi_exec($multi_ch, $active) === CURLM_CALL_MULTI_PERFORM);
             if (curl_multi_select($multi_ch) != -1) {
                 do {
                     $mrc = curl_multi_exec($multi_ch, $active);
+                    if ($mrc == CURLM_OK)
+                    {
+                        if($info = curl_multi_info_read($multi_ch))
+                        {
+                            var_dump($info);
+                        }
+                    }
                 } while ($mrc == CURLM_CALL_MULTI_PERFORM);
             }
         }
