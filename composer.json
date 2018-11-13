@@ -1,5 +1,5 @@
 {
-  "name": "multilinguals/apollo-client",
+  "name": "kechujian/apollo-client",
   "description": "apollo client for php",
   "type": "library",
   "license": "MIT",
@@ -7,7 +7,7 @@
     "Apollo",
     "Client"
   ],
-  "homepage": "https://github.com/multilinguals/apollo-php-client",
+  "homepage": "https://github.com/kechujian/apollo-php-client",
   "require": {
     "php": "~7.0"
   },
